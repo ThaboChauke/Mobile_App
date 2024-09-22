@@ -13,8 +13,6 @@ const deleteBtn = document.getElementById("delete-btn")
 const inputEl = document.getElementById("input-el")
 const ulEl = document.getElementById("ul-el")
 
-let myLeads = []
-
 
 function render(array) {
     let listItems = ""
@@ -28,12 +26,10 @@ function render(array) {
 }
 
 saveBtn.addEventListener("click", function() {
-    myLeads.push(inputEl.value)
+    console.log(inputEl.value)
     inputEl.value = ""
-    render(myLeads)
 })
 
 deleteBtn.addEventListener("dblclick", function() {
-    myLeads = []
-    render(myLeads)
+
 })
