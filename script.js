@@ -3,6 +3,7 @@ import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com
 
 
 const firebaseConfig = {
+
 }
 
 const app = initializeApp(firebaseConfig)
