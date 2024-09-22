@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js"
-import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-database.js"
+import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-database.js"
 
 
 const firebaseConfig = {
@@ -26,6 +26,12 @@ function render(array) {
     })
     ulEl.innerHTML = listItems
 }
+
+onValue(referenceInDB, function(snapshot) {
+    const snapshotValues = snapshot.val()
+    const leads = Object.values(snapshotValues)
+    render(leads)
+})
 
 saveBtn.addEventListener("click", function() {
     push(referenceInDB,inputEl.value)
