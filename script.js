@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js"
-import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-database.js"
+import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-database.js"
 
 
 const firebaseConfig = {
@@ -28,9 +28,13 @@ function render(array) {
 }
 
 onValue(referenceInDB, function(snapshot) {
-    const snapshotValues = snapshot.val()
-    const leads = Object.values(snapshotValues)
-    render(leads)
+    const snapshotExists = snapshot.exists()
+
+    if (snapshotExists) {
+        const snapshotValues = snapshot.val()
+        const leads = Object.values(snapshotValues)
+        render(leads)
+    }
 })
 
 saveBtn.addEventListener("click", function() {
@@ -39,5 +43,6 @@ saveBtn.addEventListener("click", function() {
 })
 
 deleteBtn.addEventListener("dblclick", function() {
-
+    remove(referenceInDB)
+    ulEl.innerHTML = ""
 })
