@@ -1,11 +1,13 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js"
-import { getDatabase } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-database.js"
+import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-database.js"
 
 
 const firebaseConfig = {
 }
+
 const app = initializeApp(firebaseConfig)
 const database = getDatabase(app)
+const referenceInDB = ref(database,"leads")
 
 const saveBtn = document.getElementById("input-btn")
 const deleteBtn = document.getElementById("delete-btn")
@@ -26,7 +28,7 @@ function render(array) {
 }
 
 saveBtn.addEventListener("click", function() {
-    console.log(inputEl.value)
+    push(referenceInDB,inputEl.value)
     inputEl.value = ""
 })
 
