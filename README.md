@@ -1,6 +1,6 @@
 # Mobile App - Leads Tracker 
 
-Leads Tracker is a mobile web application that allows users to save and track leads (such as URLs or text). Users can manually input a lead or delete all saved leads. Leads are displayed dynamically on the app and are persisted using Firebase, ensuring they are available across sessions and devices.
+Leads Tracker is a mobile web application that allows users to save and track leads (such as URLs or text). Users can manually input a lead or delete all saved leads. Leads are displayed dynamically on the app and persist across sessions and devices.
 
 ## Features
 1. **Save Lead Manually:** Enter a lead (URL or text) in the input field and save it to the list.
@@ -9,24 +9,33 @@ Leads Tracker is a mobile web application that allows users to save and track le
 
 ## Installation
 
-### Running the Web App on Mobile
+### Running the Web App
 
-1. **Clone the Repository**  
-   Download the repository to your local machine:
-   ```bash
-   git clone https://github.com/ThaboChauke/Mobile_App.git
-   ```
+1. **Access the Web App**  
+   Open the Leads Tracker app by visiting the following link on your mobile browser:  
+   [Leads Tracker](https://leadstrackerthabo.netlify.app)
 
-2. **Open on Mobile Browser**  
-   Open the web app in a mobile browser by navigating to the hosted link or by opening `index.html` in your local mobile browser.
+2. **Add to Home Screen (Mobile)**  
+   To access the app like a native mobile app, follow the steps below to add it to your home screen:
 
-<!-- 3. **Deploying as a Mobile App**  
-   Use a framework like Cordova, Ionic, or any other web-to-mobile platform to package the web app into a mobile app if needed. -->
+   - **Android (Chrome):**
+     1. Open the app in Chrome: [leadstrackerthabo.netlify.app](https://leadstrackerthabo.netlify.app)
+     2. Tap the three-dot menu in the top-right corner.
+     3. Select **"Add to Home screen."**
+     4. Confirm the name (optional) and tap **"Add."**
+     5. The app will now appear on your home screen like a native app.
+
+   - **iOS (Safari):**
+     1. Open the app in Safari: [leadstrackerthabo.netlify.app](https://leadstrackerthabo.netlify.app)
+     2. Tap the **share** icon (square with an arrow).
+     3. Scroll down and select **"Add to Home Screen."**
+     4. Confirm the name (optional) and tap **"Add."**
+     5. The app will now appear on your home screen like a native app.
 
 ## How to Use
 
 - **Enter a Lead:**  
-  Type a lead (URL or text) into the input field and click the "SAVE INPUT" button to add it to the list.
+  Type a lead (URL or text) into the input field and click the `SAVE INPUT` button to add it to the list.
 
 - **Delete All Leads:**  
   Double-click the "DELETE ALL" button to clear all saved leads from both the UI and the Firebase database.
